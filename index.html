@@ -6,17 +6,27 @@
     <title>Game Example</title>
 </head>
 <body>
+<button id="play">Play</button>
+<script>
+    let play = document.getElementById("play")
+    function playMus(){
+        let audio = new Audio("./Audio/pasxalka.mp3")
+        audio.play()
+    }
+    play.addEventListener("click", playMus)
+
+</script>
+
     <style>
         body {
             overflow: hidden !important;
         }
     </style>
     <canvas id="myCanvas"></canvas>
-
     <style>
         #myCanvas {
             background-image: url("./images/bgfon.png");
-            
+
         }
     </style>
     
