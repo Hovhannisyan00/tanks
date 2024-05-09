@@ -15,7 +15,7 @@ export class Car {
         this.w = 120;
         this.h = 180;
         this.fires = []
-        this.fires2 = []
+        // this.fires2 = []
         if (this.isPlayer) {
             this.img.src = "./images/red.png";
         } else {
@@ -72,6 +72,10 @@ export class Car {
     shoot (){
         let fire = new Fire( this.x+40 , this.y);
         this.fires.push(fire)
+        
+    
+
+
         // this.fires2.img2.src = "https://cdn1.iconfinder.com/data/icons/food-4-9/128/Vigor_Fire-Hot-Flame-Burn-512.png"
         
         // let fire2 = new Fire( this.x+80, this.y - 30);
