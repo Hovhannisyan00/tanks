@@ -17,7 +17,7 @@ export class Fire{
     }   
     move(){
         this.draw()
-        this.y -= 20
+        this.y -= 1
         
         
     }

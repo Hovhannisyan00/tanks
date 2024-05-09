@@ -3,6 +3,7 @@ import { Fire } from './Fire.js';
 
 export class Car {
     img = new Image();
+    souund = new Audio()
     // img2 = new Image()
     // fire = null;
 
@@ -31,15 +32,13 @@ export class Car {
             this.fireMowe()
         }
 
-        // if(this.fires2.length !== 0){
-        //     this.fireMowe2()
-        // }
+
         this.img.onload();
     }
 
     move() {
         this.draw();
-        this.y += 2;
+        this.y += 1;
         // this.fire.move();
     }
 
@@ -48,6 +47,8 @@ export class Car {
         if (this.x >= innerWidth - 120) {
             this.x = innerWidth - 120;
         }
+        this.souund.src = "./Audio/aker.wav"
+            this.souund.play()
     }
 
     moveLeft() {
@@ -55,6 +56,8 @@ export class Car {
         if (this.x <= -20) {
             this.x = -20;
         }
+        this.souund.src = "./Audio/aker.wav"
+            this.souund.play()
     }
 
     moveDown() {
@@ -62,27 +65,23 @@ export class Car {
         if (this.y <= 0) {
             this.y = 0;
         }
+        this.souund.src = "./Audio/aker.wav"
+        this.souund.play()
     }
     moveUp() {
         this.y += 40;
         if (this.y >= innerHeight - 200) {
             this.y = innerHeight - 200;
         }
+        this.souund.src = "./Audio/aker.wav"
+        this.souund.play()
     }
     shoot (){
         let fire = new Fire( this.x+40 , this.y);
         this.fires.push(fire)
-        
-    
-
-
-        // this.fires2.img2.src = "https://cdn1.iconfinder.com/data/icons/food-4-9/128/Vigor_Fire-Hot-Flame-Burn-512.png"
-        
-        // let fire2 = new Fire( this.x+80, this.y - 30);
-        // this.fires2.push(fire)
-
-
-        
+        this.souund.src = "./Audio/boom.wav"
+        this.souund.play()
+                
     }
     fireMowe(){
         if (this.isPlayer){
@@ -95,8 +94,4 @@ export class Car {
         }
 
     }
-    // fireMowe2 (){
-    //     this.fires2.forEach(elem => elem.draw())
-    //     this.fires2.forEach(elm => elm.y -= 20)
-    // }
 }
